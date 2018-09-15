@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   matrix.h                                           :+:      :+:    :+:   */
+/*   matrix.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 15:25:21 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/06 10:13:43 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/09/15 10:53:50 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATRIX_H
+gaa#ifndef MATRIX_H
 # define MATRIX_H
 
 # include <math.h>
@@ -18,21 +18,24 @@
 
 # define DEG2RAD 0.01745329251
 
-typedef struct	s_mat3d
+class 	Matrix3d
 {
-	t_vector3d	fwd;
-	t_vector3d	up;
-	t_vector3d	rgt;
-}				t_mat3d;
+	protected:
+		Vector3d 	fwd;
+		Vector3d 	up;
+		Vector3d 	rgt;
 
-t_mat3d			matrix_mult(t_mat3d m1, t_mat3d m2);
-t_mat3d			matrix_inv(t_mat3d mat);
-double			matrix_det(t_mat3d mat);
-t_mat3d			new_matrix(double x, double y, double z);
-t_vector3d		adjust_direction(t_vector3d src, t_mat3d mat);
-void			identity_mat(t_mat3d *mat);
-void			rotate_x(t_mat3d *mat, double a);
-void			rotate_y(t_mat3d *mat, double a);
-void			rotate_z(t_mat3d *mat, double a);
+	public:
+		Matrix3d(double x, double y, double z);
+		~Matrix3d(void) const;
+		double		matrix_det(Matrix3d mat);
+		void		identity_mat(Matrix3d *mat);
+		void		rotate_x(Matrix3d* mat, double a);
+		void		rotate_y(Matrix3d* mat, double a);
+		void		rotate_z(Matrix3d* mat, double a);
+		Matrix3d	matrix_mult(Matrix3d m1, Matrix3d m2);
+		Matrix3d	matrix_inv(Matrix3d mat);
+		Vector3d	adjust_direction(Vector3d src, Matrix3d mat);
+}
 
 #endif
