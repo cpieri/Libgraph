@@ -6,7 +6,7 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 15:25:21 by cpieri            #+#    #+#             */
-/*   Updated: 2018/09/15 10:54:34 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/09/15 10:55:04 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ class 	Matrix3d
 		Matrix3d	matrix_mult(Matrix3d m1, Matrix3d m2);
 		Matrix3d	matrix_inv(Matrix3d mat);
 		Vector3d	adjust_direction(Vector3d src, Matrix3d mat);
-}
+};
 
 #endif
