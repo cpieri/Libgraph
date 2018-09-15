@@ -6,11 +6,11 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 15:25:21 by cpieri            #+#    #+#             */
-/*   Updated: 2018/09/15 10:53:50 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/09/15 10:54:34 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-gaa#ifndef MATRIX_H
+#ifndef MATRIX_H
 # define MATRIX_H
 
 # include <math.h>
