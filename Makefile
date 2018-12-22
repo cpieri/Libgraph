@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2018/12/22 16:44:58 by delay            ###   ########.fr        #
+#    Updated: 2018/12/22 17:09:18 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ DEPS =		Makefile			\
 
 SRCS = 		color.cpp			\
 			vector3d.cpp		\
+			vector4d.cpp		\
 			vector2d.cpp
 
 

@@ -6,7 +6,7 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:03:51 by cpieri            #+#    #+#             */
-/*   Updated: 2018/12/22 16:45:19 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/22 17:12:02 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,6 @@
 # define __VECTOR_HPP__
 
 /*
-   typedef struct	s_vector4d
-   {
-   double		x;
-   double		y;
-   double		z;
-   double		w;
-   }				t_vector4d;
-
-   t_vector4d		new_vector_4d(double x, double y, double z, double w);
    t_vector3d		cross(t_vector3d a, t_vector3d b);
    t_vector3d		vector_op(t_vector3d a, t_vector3d b, char type);
    t_vector2d		vector_op_2d(t_vector2d a, t_vector2d b, char type);
@@ -70,6 +61,26 @@ class	Vector2d
 		void	set_value(double x, double y);
 		void	set_unicoord_value(double value);
 		void	lambda_product(double lambda);
+};
+
+class	Vector4d
+{
+	private:
+		double	_x;
+		double	_y;
+		double	_z;
+		double	_w;
+
+	public:
+		Vector4d(double x, double y, double z, double w);
+		~Vector4d(void);
+
+		double	get_x(void) const;
+		double	get_y(void) const;
+		double	get_z(void) const;
+		double	get_w(void) const;
+		void	set_value(double x, double y, double z, double w);
+		void	set_unicoord_value(double value);
 };
 
 #endif
