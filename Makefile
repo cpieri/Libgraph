@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2018/12/22 16:08:11 by delay            ###   ########.fr        #
+#    Updated: 2018/12/22 16:44:58 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ DEPS =		Makefile			\
 			include/matrix.h
 
 SRCS = 		color.cpp			\
-			vector_class.cpp
+			vector3d.cpp		\
+			vector2d.cpp
 
 
 OBJS	=	$(SRCS:.cpp=.o)

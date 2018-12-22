@@ -6,30 +6,11 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 15:03:11 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/03 14:42:51 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/12/22 16:44:24 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "vector.h"
-
-t_vector3d	lambda_product_d3(double lambda, t_vector3d vector)
-{
-	t_vector3d	result;
-
-	result.x = lambda * vector.x;
-	result.y = lambda * vector.y;
-	result.z = lambda * vector.z;
-	return (result);
-}
-
-t_vector2d	lambda_product_d2(double lambda, t_vector2d vector)
-{
-	t_vector2d	result;
-
-	result.x = lambda * vector.x;
-	result.y = lambda * vector.y;
-	return (result);
-}
 
 t_vector3d	vectorial_prod(t_vector3d a, t_vector3d b)
 {
@@ -57,9 +38,4 @@ t_vector3d	find_normal_vect(t_vector3d u)
 	else
 		v = new_vector_3d(0, 0, 0);
 	return (v);
-}
-
-double		dotprod(t_vector3d a, t_vector3d b)
-{
-	return (a.x * b.x + a.y * b.y + a.z * b.z);
 }

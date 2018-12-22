@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_class.cpp                                   :+:      :+:    :+:   */
+/*   vector3d.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 15:31:43 by delay             #+#    #+#             */
-/*   Updated: 2018/12/22 16:08:29 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/22 16:45:56 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,20 @@ double	Vector3d::dotprod(Vector3d b) const
 	return (this->_x * b.get_x() + this->_y * b.get_y() + this->_z * b.get_z());
 }
 
+double	Vector3d::distance(Vector3d b) const
+{
+	double	x;
+	double	y;
+	double	z;
+	double	d;
+
+	x = (this->_x - b.get_x()) * (this->_x - b.get_x());
+	y = (this->_y - b.get_y()) * (this->_y - b.get_y());
+	z = (this->_z - b.get_z()) * (this->_z - b.get_z());
+	d = sqrt(x + y + z);
+	return (d);
+}
+
 void	Vector3d::set_value(double x, double y, double z)
 {
 	this->_x = x;
@@ -71,7 +85,7 @@ void	Vector3d::normalize(void)
 	this->_z = this->_z / length;
 }
 
-void	Vector3d::lamda_product(double const lambda)
+void	Vector3d::lambda_product(double const lambda)
 {
 	this->_x = lambda * this->_x;
 	this->_y = lambda * this->_y;
