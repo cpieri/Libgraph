@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 15:31:43 by delay             #+#    #+#             */
-/*   Updated: 2018/12/22 16:45:56 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/22 18:38:55 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,4 +90,26 @@ void	Vector3d::lambda_product(double const lambda)
 	this->_x = lambda * this->_x;
 	this->_y = lambda * this->_y;
 	this->_z = lambda * this->_z;
+}
+
+void	Vector3d::vectorial_prod(Vector3d b)
+{
+	this->_x = this->_y * b.get_z() - this->_z * b.get_y();
+	this->_y = this->_z * b.get_x() - this->_x * b.get_z();
+	this->_z = this->_x * b.get_y() - this->_y * b.get_x();
+}
+
+void	Vector3d::find_normal(void)
+{
+	if (this->_x)
+	{
+		if (this->_y)
+			this->set_value(1, -this->_x / this->_y, 0);
+		else
+			this->set_value(0, 1, 0);
+	}
+	else if (this->_y || this->_z)
+		this->set_value(1, 0, 0);
+	else
+		this->set_value(0, 0, 0);
 }
