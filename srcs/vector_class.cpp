@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/22 15:31:43 by delay             #+#    #+#             */
-/*   Updated: 2018/12/22 15:57:10 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/22 16:08:29 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void	Vector3d::set_unicoord_value(double value)
 
 void	Vector3d::normalize(void)
 {
-	double const	length = this->get_length;
+	double const	length = this->get_length();
 
 	this->_x = this->_x / length;
 	this->_y = this->_y / length;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector.h                                           :+:      :+:    :+:   */
+/*   vector.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:03:51 by cpieri            #+#    #+#             */
-/*   Updated: 2018/12/22 16:05:45 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/22 16:08:56 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,6 @@ class	Vector3d
 		void	set_unicoord_value(double value);
 		void	normalize(void);
 		void	lamda_product(double const lambda);
-}
+};
 
 #endif

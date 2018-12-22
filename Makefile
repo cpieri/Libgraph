@@ -6,13 +6,13 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2018/12/22 16:05:39 by delay            ###   ########.fr        #
+#    Updated: 2018/12/22 16:08:11 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	libgraph.a
 
-CC		=	gcc
+CC		=	g++
 
 CFLAGS	=	-Wall -Wextra -Werror
 
@@ -26,7 +26,7 @@ DEPS =		Makefile			\
 			include/bloc.h		\
 			include/color.hpp	\
 			include/libgraph.h	\
-			include/vector.h	\
+			include/vector.hpp	\
 			include/button.h	\
 			include/label.hpp	\
 			include/matrix.h
