@@ -6,49 +6,49 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 15:31:44 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/03 14:41:55 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/12/20 07:06:45 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.h"
 
-void	identity_mat(t_mat3d *mat)
+void	Matrix::identity()
 {
-	mat->rgt = new_vector_3d(1, 0, 0);
-	mat->up = new_vector_3d(0, 1, 0);
-	mat->fwd = new_vector_3d(0, 0, 1);
+	this->rgt = new_vector_3d(1, 0, 0);
+	this->up = new_vector_3d(0, 1, 0);
+	this->fwd = new_vector_3d(0, 0, 1);
 }
 
-void	rotate_x(t_mat3d *mat, double a)
+void	Matrix::rotate_x(double a)
 {
 	a *= DEG2RAD;
-	mat->rgt = new_vector_3d(1, 0, 0);
-	mat->up = new_vector_3d(0, cos(a), -sin(a));
-	mat->fwd = new_vector_3d(0, sin(a), cos(a));
+	this->rgt = new_vector_3d(1, 0, 0);
+	this->up = new_vector_3d(0, cos(a), -sin(a));
+	this->fwd = new_vector_3d(0, sin(a), cos(a));
 }
 
-void	rotate_y(t_mat3d *mat, double a)
+void	Matrix::rotate_y(double a)
 {
 	a *= DEG2RAD;
-	mat->rgt = new_vector_3d(cos(a), 0, sin(a));
-	mat->up = new_vector_3d(0, 1, 0);
-	mat->fwd = new_vector_3d(-sin(a), 0, cos(a));
+	this->rgt = new_vector_3d(cos(a), 0, sin(a));
+	this->up = new_vector_3d(0, 1, 0);
+	this->fwd = new_vector_3d(-sin(a), 0, cos(a));
 }
 
-void	rotate_z(t_mat3d *mat, double a)
+void	Matrix::rotate_z(double a)
 {
 	a *= DEG2RAD;
-	mat->rgt = new_vector_3d(cos(a), -sin(a), 0);
-	mat->up = new_vector_3d(sin(a), cos(a), 0);
-	mat->fwd = new_vector_3d(0, 0, 1);
+	this->rgt = new_vector_3d(cos(a), -sin(a), 0);
+	this->up = new_vector_3d(sin(a), cos(a), 0);
+	this->fwd = new_vector_3d(0, 0, 1);
 }
 
-t_mat3d	matrix_inv(t_mat3d mat)
+Matrix	matrix_inv(Matrix mat)
 {
-	t_mat3d	ret;
+	Matrix	ret;
 	double	det;
 
-	det = matrix_det(mat);
+	det = mat.det();
 	if (det != 0)
 	{
 		ret.rgt = new_vector_3d((mat.up.y * mat.fwd.z)

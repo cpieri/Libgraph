@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libgraph.hpp                                       :+:      :+:    :+:   */
+/*   label.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 15:41:07 by cpieri            #+#    #+#             */
-/*   Updated: 2018/09/15 10:43:53 by cpieri           ###   ########.fr       */
+/*   Created: 2018/06/04 15:24:24 by cpieri            #+#    #+#             */
+/*   Updated: 2018/12/19 18:22:38 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __LIBGRAPH_H__
-# define __LIBGRAPH_H__
+#include "label.hpp"
 
-# include "button.h"
-# include "bloc.h"
-# include "vector.h"
-# include "matrix.h"
-# include "color.h"
+Label::Label(char const * s, int f_size, Color c, Vector4d r_m) : _title(s),
+	_font_size(f_size), _color(c), _ratio_marge(r_m)
+{
+}
 
-#endif
+Label::~Label(void)
+{
+	delete this->_title;
+}

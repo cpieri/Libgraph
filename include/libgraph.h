@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   color.h                                            :+:      :+:    :+:   */
+/*   libgraph.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 16:10:40 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/17 09:24:53 by bspindle         ###   ########.fr       */
+/*   Created: 2018/06/01 15:41:07 by cpieri            #+#    #+#             */
+/*   Updated: 2018/06/06 10:13:42 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COLOR_H
-# define COLOR_H
+#ifndef LIBGRAPH_H
+# define LIBGRAPH_H
 
-typedef struct	s_color
-{
-	int			r;
-	int			g;
-	int			b;
-}				t_color;
+# include "button.h"
+# include "bloc.h"
+# include "vector.h"
+# include "matrix.h"
+# include "color.h"
 
-typedef struct	s_color_4
-{
-	int			r;
-	int			g;
-	int			b;
-	int			a;
-}				t_color_4;
-
-int				interpolate(int start, int finish, float ratio);
-int				color_to_int(t_color c);
-t_color			int_to_color(int n);
-t_color			new_color(int red, int green, int blue);
-t_color			color_prod(t_color color, double lambda);
 #endif

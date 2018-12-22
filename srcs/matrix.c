@@ -6,23 +6,23 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/15 14:40:36 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/03 14:42:27 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/12/20 07:06:42 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.h"
 
-double				matrix_det(t_mat3d mat)
+double	Matrix::matrix_det(void)
 {
 	double	res;
 
 	res = 0;
-	res += mat.rgt.x * mat.up.y * mat.fwd.z;
-	res += mat.up.x * mat.fwd.y * mat.rgt.z;
-	res += mat.fwd.x * mat.rgt.y * mat.up.z;
-	res -= mat.rgt.x * mat.fwd.y * mat.up.z;
-	res -= mat.fwd.x * mat.up.y * mat.rgt.z;
-	res -= mat.up.x * mat.rgt.y * mat.fwd.z;
+	res += this->rgt.x * this->up.y * this->fwd.z;
+	res += this->up.x * this->fwd.y * this->rgt.z;
+	res += this->fwd.x * this->rgt.y * this->up.z;
+	res -= this->rgt.x * this->fwd.y * this->up.z;
+	res -= this->fwd.x * this->up.y * this->rgt.z;
+	res -= this->up.x * this->rgt.y * this->fwd.z;
 	return (res);
 }
 
@@ -58,7 +58,7 @@ t_vector3d			adjust_direction(t_vector3d src, t_mat3d mat)
 	return (ret);
 }
 
-t_mat3d				new_matrix(double x, double y, double z)
+Matrix::Matrix(double x, double y, double z)
 {
 	t_mat3d	ret;
 	t_mat3d	tmp;

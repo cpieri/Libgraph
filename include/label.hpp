@@ -6,7 +6,7 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 15:26:55 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/23 21:36:09 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/12/19 18:19:08 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,34 @@
 
 # include "../../libft/include/libft.h"
 # include "vector.h"
-# include "color.h"
+# include "color.hpp"
 
-typedef struct	s_label
+/*
+   typedef struct	s_label
+   {
+   char		*title;
+   int			font_size;
+   t_vector4d	ratio_marge;
+   t_color		color;
+   }				t_label;
+
+   t_label			new_label(char *s, t_color c,
+   t_vector4d ratio_marge, int f_size);
+   t_label			*new_m_label(char *s, t_color c,
+   t_vector4d ratio_marge, int parent_w);
+ */
+
+class	Label
 {
-	char		*title;
-	int			font_size;
-	t_vector4d	ratio_marge;
-	t_color		color;
-}				t_label;
+	private:
+		char const *	_title;
+		int				_font_size;
+		Color			_color;
+		Vector4d		_ratio_marge;
 
-t_label			new_label(char *s, t_color c,
-		t_vector4d ratio_marge, int f_size);
-t_label			*new_m_label(char *s, t_color c,
-		t_vector4d ratio_marge, int parent_w);
+	public:
+		Label(char const * s, int f_size, Color c, Vector4d r_m);
+		~Label(void);
+};
 
 #endif
