@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2018/12/22 18:59:01 by delay            ###   ########.fr        #
+#    Updated: 2018/12/31 18:52:35 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,19 +23,24 @@ OBJ_PATH=	obj
 CPPFLAG	=	-Iinclude
 
 DEPS =		Makefile			\
-			include/bloc.h		\
+			include/display.hpp	\
+			include/utils.hpp	\
+			include/libgraph.hpp\
 			include/color.hpp	\
-			include/libgraph.h	\
 			include/vector.hpp	\
+			include/bloc.h		\
 			include/button.h	\
 			include/label.hpp	\
 			include/matrix.h
 
 SRCS = 		color.cpp			\
+			utils.cpp			\
+			bloc.cpp			\
 			vector3d.cpp		\
 			vector4d.cpp		\
 			vector2d.cpp		\
 			vector_op.cpp
+#display.cpp			\
 
 
 OBJS	=	$(SRCS:.cpp=.o)

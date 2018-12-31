@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libgraph.h                                         :+:      :+:    :+:   */
+/*   libgraph.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
+/*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/01 15:41:07 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/06 10:13:42 by cpieri           ###   ########.fr       */
+/*   Created: 2018/12/31 16:53:12 by delay             #+#    #+#             */
+/*   Updated: 2018/12/31 16:53:17 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBGRAPH_H
-# define LIBGRAPH_H
+#ifndef __LIBGRAPH_HPP__
+# define __LIBGRAPH_HPP__
 
-# include "button.h"
-# include "bloc.h"
-# include "vector.h"
-# include "matrix.h"
-# include "color.h"
+# include "color.hpp"
+# include "vector.hpp"
+# include "display.hpp"
 
 #endif

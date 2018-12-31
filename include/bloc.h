@@ -6,17 +6,17 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/04 10:42:20 by cpieri            #+#    #+#             */
-/*   Updated: 2018/06/23 21:43:45 by cpieri           ###   ########.fr       */
+/*   Updated: 2018/12/31 16:42:12 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BLOC_H
 # define BLOC_H
 
-# include "color.h"
-# include "vector.h"
+# include "color.hpp"
+# include "vector.hpp"
 # include "button.h"
-# include "label.h"
+# include "label.hpp"
 # include "../../libft/include/libft.h"
 # include <stdlib.h>
 
