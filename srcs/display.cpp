@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 20:28:50 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 21:29:06 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,7 @@ void			Window::destroy(void)
 
 void			Window::change_size(void)
 {
-	std::cout << "this->size " << this->_width << " " << this->_height << std::endl;
 	SDL_GetWindowSize(this->_win, &this->_width, &this->_height);
-	std::cout << "this->size " << this->_width << " " << this->_height << std::endl;
 }
 
 Vector4d		Window::get_size(void)
@@ -97,7 +95,6 @@ int				Window::draw_rect(Vector4d rect, int color)
 	sdl_rect.y = rect.get_y(); 
 	sdl_rect.w = rect.get_z(); 
 	sdl_rect.h = rect.get_w();
-	std::cout << sdl_rect.w << sdl_rect.h << std::endl;
 	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
 	ret = SDL_RenderFillRect(this->_rend, &sdl_rect);
 	return (ret);

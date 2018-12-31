@@ -6,11 +6,12 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 20:24:41 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 21:29:51 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "bloc.hpp"
+#include <iostream>
 
 Bloc::Bloc(Vector4d win_size, Vector4d ratio_margin, Color c, int flags) :
 	_pos_flags(flags), _pos(0, 0, 0, 0),

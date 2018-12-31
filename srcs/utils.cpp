@@ -6,11 +6,12 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 18:17:34 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 18:51:32 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 21:28:08 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.hpp"
+#include <iostream>
 
 static Vector4d	calc_left_p(Vector4d ppos, Vector2d size, Vector2d mar, int f)
 {
