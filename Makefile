@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2018/12/31 18:52:35 by delay            ###   ########.fr        #
+#    Updated: 2018/12/31 19:41:30 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,16 @@ OBJ_PATH=	obj
 
 CPPFLAG	=	-Iinclude
 
+FW_PATH	=	frameworks
+
+SDL_PATH=	$(FW_PATH)/SDL2.framework
+
+IMG_PATH=	$(FW_PATH)/SDL2_image.framework
+
+TTF_PATH=	$(FW_PATH)/SDL2_ttf.framework
+
+SDLFLAG	=	-I$(SDL_PATH)/Headers -I$(IMG_PATH)/Headers -I$(TTF_PATH)/Headers
+
 DEPS =		Makefile			\
 			include/display.hpp	\
 			include/utils.hpp	\
@@ -35,12 +45,12 @@ DEPS =		Makefile			\
 
 SRCS = 		color.cpp			\
 			utils.cpp			\
+			display.cpp			\
 			bloc.cpp			\
 			vector3d.cpp		\
 			vector4d.cpp		\
 			vector2d.cpp		\
 			vector_op.cpp
-#display.cpp			\
 
 
 OBJS	=	$(SRCS:.cpp=.o)
@@ -62,7 +72,7 @@ echo:
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.cpp $(DEPS)
 			@mkdir $(OBJ_PATH) 2> /dev/null || true
-			@$(CC) $(CFLAGS) $(CPPFLAG) -o $@ -c $<
+			@$(CC) $(CFLAGS) $(CPPFLAG) $(SDLFLAG) -o $@ -c $<
 			@echo -n .
 
 clean:
