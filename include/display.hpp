@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 18:29:28 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 20:03:48 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ class	Window
 		void			clear(void);
 		void			print(void);
 		int				draw_pixel(int x, int y, int color);
+		int				draw_rect(Vector4d rect, int color);
 		SDL_Renderer*	get_render(void);
 
 		/*

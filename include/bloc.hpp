@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 16:55:47 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 19:05:14 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 20:22:54 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __BLOC_HPP__
 
 # include "color.hpp"
+# include "display.hpp"
 # include "vector.hpp"
 # include "utils.hpp"
 # include <cstdlib>
@@ -49,6 +50,8 @@ class	Bloc
 		**	Position
 		*/
 		void		recalc_position(Vector4d parent_pos);
+
+		void		print(Window* win);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 19:02:58 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 20:24:41 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,9 @@ void		Bloc::recalc_position(Vector4d parent_pos)
 {
 	this->_pos = calc_position(parent_pos, this->_ratio, this->_margin,
 			this->_pos_flags);
+}
+
+void		Bloc::print(Window* win)
+{
+	win->draw_rect(this->_pos, 0xffccaa);
 }

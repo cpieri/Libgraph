@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 18:29:01 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 20:28:50 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,30 @@ void			Window::print(void)
 
 int				Window::draw_pixel(int x, int y, int color)
 {
-	Color	c;
+	Color		c;
+	int 	ret;
 
 	c.int_to_color(color);
 	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
-	SDL_RenderDrawPoint(this->_rend, x, y);
-	return (0);
+	ret = SDL_RenderDrawPoint(this->_rend, x, y);
+	return (ret);
+}
+
+int				Window::draw_rect(Vector4d rect, int color)
+{
+	Color		c;
+	SDL_Rect	sdl_rect;
+	int 	ret;
+
+	c.int_to_color(color);
+	sdl_rect.x = rect.get_x(); 
+	sdl_rect.y = rect.get_y(); 
+	sdl_rect.w = rect.get_z(); 
+	sdl_rect.h = rect.get_w();
+	std::cout << sdl_rect.w << sdl_rect.h << std::endl;
+	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
+	ret = SDL_RenderFillRect(this->_rend, &sdl_rect);
+	return (ret);
 }
 
 SDL_Renderer*	Window::get_render(void)
