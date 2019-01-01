@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 22:09:20 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/01 22:30:15 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,15 @@ SDL_Window*		Window::get(void)
 void			Window::clear(void)
 {
 	SDL_SetRenderDrawColor(this->_rend, 0, 0, 0, 1);
+	SDL_RenderClear(this->_rend);
+}
+
+void			Window::clear_color(int color)
+{
+	Color	c;
+
+	c.int_to_color(color);
+	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
 	SDL_RenderClear(this->_rend);
 }
 

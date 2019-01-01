@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 20:03:48 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/01 22:28:40 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ class	Window
 		**	Fonctions for Renders
 		*/
 		void			clear(void);
+		void			clear_color(int color);
 		void			print(void);
 		int				draw_pixel(int x, int y, int color);
 		int				draw_rect(Vector4d rect, int color);
