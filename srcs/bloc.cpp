@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 21:29:51 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 21:45:51 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ Vector2d	Bloc::get_ratio(void) const
 
 void		Bloc::recalc_position(Vector4d parent_pos)
 {
+	std::cout << "pos " << parent_pos.get_z() << std::endl;
+	std::cout << "pos " << parent_pos.get_w() << std::endl;
 	this->_pos = calc_position(parent_pos, this->_ratio, this->_margin,
 			this->_pos_flags);
 }

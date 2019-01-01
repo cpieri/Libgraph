@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 21:29:06 by delay            ###   ########.fr       */
+/*   Updated: 2018/12/31 22:09:20 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void			Window::destroy(void)
 void			Window::change_size(void)
 {
 	SDL_GetWindowSize(this->_win, &this->_width, &this->_height);
+	std::cout << "change_size " << this->_width << " " << this->_height << std::endl;
 }
 
 Vector4d		Window::get_size(void)
