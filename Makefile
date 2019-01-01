@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/01 22:03:03 by delay            ###   ########.fr        #
+#    Updated: 2019/01/01 23:59:11 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,13 @@ DEPS =		Makefile			\
 			include/libgraph.hpp\
 			include/color.hpp	\
 			include/vector.hpp	\
-			include/bloc.h		\
-			include/button.h	\
-			include/label.hpp	\
-			include/matrix.h
+			include/button.hpp
 
 SRCS = 		color.cpp			\
 			utils.cpp			\
 			display.cpp			\
 			bloc.cpp			\
+			button.cpp			\
 			vector3d.cpp		\
 			vector4d.cpp		\
 			vector2d.cpp		\

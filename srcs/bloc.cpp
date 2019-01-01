@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2019/01/01 22:22:24 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/02 00:00:00 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		Bloc::recalc_position(Vector4d parent_pos)
 			this->_pos_flags);
 }
 
-void		Bloc::print(Window* win)
+void		Bloc::print(Window* win) const
 {
 	win->draw_rect(this->_pos, this->_color.color_to_int());
 }

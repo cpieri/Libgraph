@@ -6,18 +6,12 @@
 /*   By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/01 13:03:51 by cpieri            #+#    #+#             */
-/*   Updated: 2018/12/22 18:35:07 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/01 23:21:19 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __VECTOR_HPP__
 # define __VECTOR_HPP__
-
-/*
-   t_vector3d		vector_op(t_vector3d a, t_vector3d b, char type);
-   t_vector2d		vector_op_2d(t_vector2d a, t_vector2d b, char type);
-   t_vector3d		find_normal_vect(t_vector3d u);
- */
 
 class	Vector3d
 {
