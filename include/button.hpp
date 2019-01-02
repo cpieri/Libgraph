@@ -6,13 +6,14 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/01 23:45:33 by delay             #+#    #+#             */
-/*   Updated: 2019/01/02 00:10:56 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/02 01:22:17 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __BUTTON_HPP__
 # define __BUTTON_HPP__
 
+# include "display.hpp"
 # include "bloc.hpp"
 # include "utils.hpp"
 

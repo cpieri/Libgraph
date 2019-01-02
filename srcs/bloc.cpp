@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2019/01/02 00:50:12 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/02 01:27:59 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,33 @@ Vector2d	Bloc::get_ratio(void) const
 
 void		Bloc::recalc_position(Vector4d parent_pos)
 {
-	std::cout << "pos " << parent_pos.get_z() << std::endl;
-	std::cout << "pos " << parent_pos.get_w() << std::endl;
+	Button *	btn;
+
 	this->_pos = calc_position(parent_pos, this->_ratio, this->_margin,
 			this->_pos_flags);
+	for (int i = 0; i < this->_nb_child; i++)
+	{
+		if (this->_lst_child[i]->type == BUTTON)
+		{
+			btn = ((Button*)this->_lst_child[i]->obj);
+			btn->recalc_position(this->_pos);
+		}
+	}
 }
 
 void		Bloc::print(Window* win) const
 {
+	Button *	btn;
+
 	win->draw_rect(this->_pos, this->_color.color_to_int());
+	for (int i = 0; i < this->_nb_child; i++)
+	{
+		if (this->_lst_child[i]->type == BUTTON)
+		{
+			btn = ((Button*)this->_lst_child[i]->obj);
+			btn->print(win);
+		}
+	}
 }
 
 int			Bloc::init_nb_childrens(int nb)
