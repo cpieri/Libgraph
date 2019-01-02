@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 16:53:12 by delay             #+#    #+#             */
-/*   Updated: 2018/12/31 20:12:04 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/02 00:55:10 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@
 # include "display.hpp"
 # include "utils.hpp"
 # include "bloc.hpp"
+# include "button.hpp"
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/01 23:45:33 by delay             #+#    #+#             */
-/*   Updated: 2019/01/02 00:04:09 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/02 00:10:56 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define __BUTTON_HPP__
 
 # include "bloc.hpp"
-# include "vector.hpp"
-# include "color.hpp"
 # include "utils.hpp"
 
 class	Button
