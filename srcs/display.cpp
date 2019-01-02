@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2019/01/01 22:30:15 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 00:11:10 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,7 @@ SDL_Window*		Window::get(void)
 **	Fonctions for Renders
 *******************************************************************************/
 
-void			Window::clear(void)
-{
-	SDL_SetRenderDrawColor(this->_rend, 0, 0, 0, 1);
-	SDL_RenderClear(this->_rend);
-}
-
-void			Window::clear_color(int color)
+void			Window::clear(int color)
 {
 	Color	c;
 
@@ -119,9 +113,12 @@ SDL_Renderer*	Window::get_render(void)
 **	Fonctions for Events
 *******************************************************************************/
 
-void			Window::set_loop(int loop)
+int				Window::set_loop(int loop)
 {
+	if (loop > 1 && loop < 0)
+		return (-1);
 	this->_loop = loop;
+	return (0);
 }
 
 int				Window::get_loop(void) const

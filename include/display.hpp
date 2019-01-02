@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/01 22:28:40 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 00:09:21 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,17 @@ class	Window
 		/*
 		**	Fonctions for Renders
 		*/
-		void			clear(void);
-		void			clear_color(int color);
+		void			clear(int color = 0x000000);
 		void			print(void);
-		int				draw_pixel(int x, int y, int color);
-		int				draw_rect(Vector4d rect, int color);
+		int				draw_pixel(int x, int y, int color = 0xffffff);
+		int				draw_rect(Vector4d rect, int color = 0xffffff);
 		SDL_Renderer*	get_render(void);
 
 		/*
 		**	Fonctions for Events
 		*/
 		int				get_loop(void) const;
-		void			set_loop(int loop);
+		int				set_loop(int loop);
 };
 
 #endif

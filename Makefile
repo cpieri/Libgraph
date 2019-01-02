@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/01 23:59:11 by delay            ###   ########.fr        #
+#    Updated: 2019/01/02 23:55:42 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ OBJ		=	$(addprefix $(OBJ_PATH)/,$(OBJS) )
 all:		echo $(NAME)
 
 $(NAME): 	$(OBJ)
-			@ar rc $(NAME) $(OBJ) ../libft/libft.a
+			@ar rc $(NAME) $(OBJ)
 			@ranlib $(NAME)
 
 echo:
