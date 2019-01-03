@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 00:09:21 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 01:42:52 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 # include <SDL.h>
 # include "vector.hpp"
+# include "color.hpp"
 # define WIN_CENTER SDL_WINDOWPOS_CENTERED
 
 class	Window
 {
-	private:
+	protected:
 		SDL_Window*		_win;
 		SDL_Renderer*	_rend;
 		int				_width;
 		int				_height;
 		int				_loop;
+		Color			_color;
 
 	public:
 		Window(void);
@@ -42,10 +44,12 @@ class	Window
 		/*
 		**	Fonctions for Renders
 		*/
+
 		void			clear(int color = 0x000000);
-		void			print(void);
-		int				draw_pixel(int x, int y, int color = 0xffffff);
-		int				draw_rect(Vector4d rect, int color = 0xffffff);
+		void			clear(Color c);
+
+		void			print(void) const;
+
 		SDL_Renderer*	get_render(void);
 
 		/*

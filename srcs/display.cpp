@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 00:11:10 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 01:38:55 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,43 +65,25 @@ SDL_Window*		Window::get(void)
 
 void			Window::clear(int color)
 {
-	Color	c;
-
-	c.int_to_color(color);
-	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
+	this->_color.int_to_color(color);
+	SDL_SetRenderDrawColor(this->_rend, 
+			this->_color.get_red(), this->_color.get_green(),
+			this->_color.get_blue(), 1);
 	SDL_RenderClear(this->_rend);
 }
 
-void			Window::print(void)
+void			Window::clear(Color c)
+{
+	this->_color = c;
+	SDL_SetRenderDrawColor(this->_rend, 
+			this->_color.get_red(), this->_color.get_green(),
+			this->_color.get_blue(), 1);
+	SDL_RenderClear(this->_rend);
+}
+
+void			Window::print(void) const
 {
 	SDL_RenderPresent(this->_rend);
-}
-
-int				Window::draw_pixel(int x, int y, int color)
-{
-	Color		c;
-	int 	ret;
-
-	c.int_to_color(color);
-	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
-	ret = SDL_RenderDrawPoint(this->_rend, x, y);
-	return (ret);
-}
-
-int				Window::draw_rect(Vector4d rect, int color)
-{
-	Color		c;
-	SDL_Rect	sdl_rect;
-	int 	ret;
-
-	c.int_to_color(color);
-	sdl_rect.x = rect.get_x(); 
-	sdl_rect.y = rect.get_y(); 
-	sdl_rect.w = rect.get_z(); 
-	sdl_rect.h = rect.get_w();
-	SDL_SetRenderDrawColor(this->_rend, c.get_red(), c.get_green(), c.get_blue(), 1);
-	ret = SDL_RenderFillRect(this->_rend, &sdl_rect);
-	return (ret);
 }
 
 SDL_Renderer*	Window::get_render(void)

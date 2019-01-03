@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/02 23:55:42 by delay            ###   ########.fr        #
+#    Updated: 2019/01/03 01:43:46 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,6 +34,7 @@ SDLFLAG	=	-I$(SDL_PATH)/Headers -I$(IMG_PATH)/Headers -I$(TTF_PATH)/Headers
 
 DEPS =		Makefile			\
 			include/display.hpp	\
+			include/graphics.hpp\
 			include/utils.hpp	\
 			include/libgraph.hpp\
 			include/color.hpp	\
@@ -43,6 +44,7 @@ DEPS =		Makefile			\
 SRCS = 		color.cpp			\
 			utils.cpp			\
 			display.cpp			\
+			graphics.cpp		\
 			bloc.cpp			\
 			button.cpp			\
 			vector3d.cpp		\
