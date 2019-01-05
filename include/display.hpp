@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 01:42:52 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 13:50:36 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,23 @@ class	Window
 		/*
 		**	Fonctions for Renders
 		*/
-
 		void			clear(int color = 0x000000);
 		void			clear(Color c);
-
-		void			print(void) const;
-
+		void			present(void) const;
 		SDL_Renderer*	get_render(void);
+
+		/*
+		**	Fonctions for draw
+		*/
+		int				drawPixel(int x, int y, int color = 0xffffff);
+		int				drawPixel(int x, int y, Color c);
+		int				drawRect(Vector4d rect, int color = 0xffffff);
+		int				drawRect(Vector4d rect, Color c);
+		int				drawRect(int x, int y, int w, int h);
+		void			setColor(Color c);
+		void			setColor(int color);
+		void			setColor(int r, int g, int b);
+	
 
 		/*
 		**	Fonctions for Events

@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libgraph.hpp                                       :+:      :+:    :+:   */
+/*   gamebuino_sdl.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/31 16:53:12 by delay             #+#    #+#             */
-/*   Updated: 2019/01/05 21:02:49 by delay            ###   ########.fr       */
+/*   Created: 2019/01/05 19:06:50 by delay             #+#    #+#             */
+/*   Updated: 2019/01/05 19:40:45 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __LIBGRAPH_HPP__
-# define __LIBGRAPH_HPP__
+#include "gamebuino_sdl.hpp"
 
-# include "color.hpp"
-# include "vector.hpp"
-# include "display.hpp"
-# include "graphics.hpp"
-# include "utils.hpp"
-# include "bloc.hpp"
-# include "button.hpp"
-# include "gamebuino_sdl.hpp"
+GamebuinoSdl::GamebuinoSdl(void)
+{
+	SDL_Init(SDL_INIT_VIDEO);
+	display.create("game", MACOS_WIDTH, MACOS_HEIGHT);
+}
 
-#endif
+GamebuinoSdl::~GamebuinoSdl(void)
+{
+	SDL_Quit();
+}
+
+bool	GamebuinoSdl::update(void)
+{
+	SDL_WaitEvent(&this->_event);
+	if (this->_event.type == 512)
+		return (false);
+	return (true);
+}
+
+int		GamebuinoSdl::get_event_type(void)
+{
+	return (this->_event.type);
+}

@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 16:55:47 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 01:48:27 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 13:51:28 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ class	Bloc
 		Vector2d	get_ratio(void) const;
 		void		recalc_position(Vector4d parent_pos);
 
-		void		print(Graphics* win) const;
+		void		print(Window* win) const;
 
 		int			init_nb_childrens(int nb);
 		int			new_children(void * child, size_t child_size, int type);

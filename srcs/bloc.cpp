@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 17:13:05 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 01:46:36 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 14:03:23 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void		Bloc::recalc_position(Vector4d parent_pos)
 	}
 }
 
-void		Bloc::print(Graphics* win) const
+void		Bloc::print(Window* win) const
 {
 	Button *	btn;
 

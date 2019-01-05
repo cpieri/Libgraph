@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/01 23:45:33 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 01:48:42 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 13:51:38 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class	Button
 		Vector2d	get_ratio(void) const;
 		void		recalc_position(Vector4d parent_pos);
 
-		void		print(Graphics * win) const;
+		void		print(Window * win) const;
 };
 
 #endif

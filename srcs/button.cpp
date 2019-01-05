@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/01 23:48:12 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 01:49:57 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/03 14:03:30 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void		Button::recalc_position(Vector4d parent_pos)
 			this->_flags_pos);
 }
 
-void       Button::print(Graphics * win) const
+void       Button::print(Window * win) const
 {
 	win->drawRect(this->_pos, this->_color.color_to_int());
 }

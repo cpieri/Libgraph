@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/03 01:43:46 by delay            ###   ########.fr        #
+#    Updated: 2019/01/05 19:24:57 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,8 @@ DEPS =		Makefile			\
 			include/libgraph.hpp\
 			include/color.hpp	\
 			include/vector.hpp	\
-			include/button.hpp
+			include/button.hpp	\
+			include/gamebuino_sdl.hpp
 
 SRCS = 		color.cpp			\
 			utils.cpp			\
@@ -50,7 +51,8 @@ SRCS = 		color.cpp			\
 			vector3d.cpp		\
 			vector4d.cpp		\
 			vector2d.cpp		\
-			vector_op.cpp
+			vector_op.cpp		\
+			gamebuino_sdl.cpp
 
 
 OBJS	=	$(SRCS:.cpp=.o)
