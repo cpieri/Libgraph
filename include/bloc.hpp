@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 16:55:47 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 13:51:28 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/08 11:39:31 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define __BLOC_HPP__
 
 # include "color.hpp"
-# include "button.hpp"
+# include "gui_button.hpp"
 # include "display.hpp"
 # include "graphics.hpp"
 # include "vector.hpp"

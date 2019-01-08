@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   button.hpp                                         :+:      :+:    :+:   */
+/*   gui_button.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/01 23:45:33 by delay             #+#    #+#             */
-/*   Updated: 2019/01/03 13:51:38 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/08 11:42:58 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "bloc.hpp"
 # include "utils.hpp"
 
-class	Button
+class	Gui_Button
 {
 	private:
 		int	const		_flags_pos;
@@ -28,8 +28,8 @@ class	Button
 		Vector4d		_pos;
 
 	public:
-		Button(Vector4d ppos, Color c, Vector4d ratio_marge, int flags);
-		~Button(void);
+		Gui_Button(Vector4d ppos, Color c, Vector4d ratio_marge, int flags);
+		~Gui_Button(void);
 
 		Vector4d	get_position(void) const;
 		Vector2d	get_margin(void) const;
