@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:38 by delay             #+#    #+#             */
-/*   Updated: 2019/01/09 14:20:20 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/09 15:52:42 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class	Buttons
 		bool	update(void) ;
 		bool	pressed(Button button) ;
 		bool	released(Button button) ;
-		bool	held(Button button, int time) ;
 		bool	repeat(Button button, int period) ;
 };
 

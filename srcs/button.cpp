@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:23 by delay             #+#    #+#             */
-/*   Updated: 2019/01/09 14:18:00 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/09 15:53:00 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ bool	Buttons::pressed(Button button)
 	Button	key;
 
 	if (this->_event.type == SDL_KEYDOWN)
-		if (this->_event.key.state == SDL_PRESSED)
+		if (this->_event.key.state == SDL_PRESSED  && this->_event.key.repeat == 0)
 		{
 			key = this->_event.key.keysym.sym;
 			if (key == button)
@@ -44,7 +44,7 @@ bool	Buttons::released(Button button)
 	Button	key;
 
 	if (this->_event.type == SDL_KEYDOWN)
-		if (this->_event.key.state == SDL_RELEASED)
+		if (this->_event.key.state == SDL_RELEASED && this->_event.key.repeat == 0)
 		{
 			key = this->_event.key.keysym.sym;
 			if (key == button)
@@ -53,17 +53,16 @@ bool	Buttons::released(Button button)
 	return (false);
 }
 
-bool	Buttons::held(Button button, int time) 
-{
-	button = 0;
-	time = 0;
-	return (true);
-}
-
 bool	Buttons::repeat(Button button, int period) 
 {
+	Button	key;
+
 	if (period <= 1)
-		if (this->pressed(button) == true)
-			return (true);
+		if (this->_event.key.state == SDL_PRESSED && this->_event.key.repeat <= 1)
+		{
+			key = this->_event.key.keysym.sym;
+			if (key == button)
+				return (true);
+		}
 	return (false);
 }
