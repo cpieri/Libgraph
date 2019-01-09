@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 22:56:43 by delay             #+#    #+#             */
-/*   Updated: 2019/01/05 21:00:50 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/09 14:19:11 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __GAMEBUINO_SDL_HPP__
 
 # include "display.hpp"
+# include "button.hpp"
 
 
 # define MACOS_WIDTH		800
@@ -24,10 +25,11 @@
 class	GamebuinoSdl
 {
 	private:
-		SDL_Event	_event;
 
 	public:
 		Window	display;
+		Buttons	buttons;
+
 
 		GamebuinoSdl(void);
 		~GamebuinoSdl(void);

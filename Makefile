@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/08 11:40:25 by delay            ###   ########.fr        #
+#    Updated: 2019/01/09 14:14:44 by cpieri      ###    #+. /#+    ###.fr      #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ DEPS =		Makefile			\
 			include/color.hpp	\
 			include/vector.hpp	\
 			include/gui_button.hpp	\
+			include/button.hpp		\
 			include/gamebuino_sdl.hpp
 
 SRCS = 		color.cpp			\
@@ -47,7 +48,8 @@ SRCS = 		color.cpp			\
 			display.cpp			\
 			graphics.cpp		\
 			bloc.cpp			\
-			gui_button.cpp			\
+			button.cpp			\
+			gui_button.cpp		\
 			vector3d.cpp		\
 			vector4d.cpp		\
 			vector2d.cpp		\

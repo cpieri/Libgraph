@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:38 by delay             #+#    #+#             */
-/*   Updated: 2019/01/08 12:01:47 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/09 14:20:20 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,28 @@
 
 # include <SDL.h>
 
-# define	BUTTON_A	SDLK_o
+# define	BUTTON_A		SDLK_o
+# define	BUTTON_B		SDLK_k
+# define	BUTTON_C		SDLK_c
+# define	BUTTON_UP		SDLK_w
+# define	BUTTON_DOWN		SDLK_s
+# define	BUTTON_LEFT		SDLK_a
+# define	BUTTON_RIGHT	SDLK_d
+
+typedef	size_t	Button;
 
 class	Buttons
 {
 	private:
+		SDL_Event	_event;
 
 	public:
-		bool	pressed(void button) const;
-		bool	released(void button) const;
-		bool	held(void button, int time) const;
-		bool	repeat(void button, int period) const;
+		size_t	get_type(void) const;
+		bool	update(void) ;
+		bool	pressed(Button button) ;
+		bool	released(Button button) ;
+		bool	held(Button button, int time) ;
+		bool	repeat(Button button, int period) ;
 };
 
 #endif
