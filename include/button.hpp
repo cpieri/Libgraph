@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:38 by delay             #+#    #+#             */
-/*   Updated: 2019/01/09 15:52:42 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 03:21:21 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # define	BUTTON_A		SDLK_o
 # define	BUTTON_B		SDLK_k
 # define	BUTTON_C		SDLK_c
+# define	BUTTON_MENU		SDLK_c
 # define	BUTTON_UP		SDLK_w
 # define	BUTTON_DOWN		SDLK_s
 # define	BUTTON_LEFT		SDLK_a

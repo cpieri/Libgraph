@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/14 00:26:37 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 04:29:53 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <SDL.h>
 # include "vector.hpp"
 # include "color.hpp"
-# include "image.hpp"
+# include "gb_image.hpp"
 
 # define	WIN_CENTER SDL_WINDOWPOS_CENTERED
 # define	P(x)		(x * 10)
@@ -45,6 +45,8 @@ class	Window
 		int				_width;
 		int				_height;
 		int				_loop;
+		int				_cursor_x;
+		int				_cursor_y;
 		Color			_color;
 
 	public:
@@ -93,6 +95,7 @@ class	Window
 		void			setColor(Color c);
 		void			setColor(int color);
 		void			setColor(int r, int g, int b);
+		void			setCursor(int x, int y);
 	
 
 		/*

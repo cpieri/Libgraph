@@ -6,12 +6,12 @@
 /*   By: cpieri <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/13 21:46:27 by cpieri       #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/14 01:49:10 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 04:30:09 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
-#include "image.hpp"
+#include "gb_image.hpp"
 #include <iostream>
 
 Image::Image(void)

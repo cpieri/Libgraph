@@ -6,7 +6,7 @@
 /*   By: cpieri <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/13 21:44:10 by cpieri       #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/14 01:28:31 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 04:44:54 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -16,7 +16,6 @@
 
 # include <SDL.h>
 # include <SDL_image.h>
-# include "image.hpp"
 
 # define	DEPTH	24
 # define	RMASK	0xFF000000

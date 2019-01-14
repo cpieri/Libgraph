@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2019/01/14 00:27:25 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 03:15:38 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <iostream>
 #include <stdlib.h>
 
-Window::Window(void) : _loop(1)
+Window::Window(void) : _loop(1), _cursor_x(0), _cursor_y(0)
 {
 }
 
@@ -368,6 +368,12 @@ void			Window::setColor(int r, int g, int b)
 	this->_color.set_color(r, g, b);
 	SDL_SetRenderDrawColor(this->_rend, this->_color.get_red(),
 			this->_color.get_green(), this->_color.get_blue(), 1);
+}
+
+void			Window::setCursor(int x, int y)
+{
+	this->_cursor_x = x;
+	this->_cursor_y = y;
 }
 
 /*******************************************************************************
