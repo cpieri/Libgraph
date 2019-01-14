@@ -6,7 +6,7 @@
 /*   By: cpieri <marvin@le-101.fr>                  +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2019/01/13 21:46:27 by cpieri       #+#   ##    ##    #+#       */
-/*   Updated: 2019/01/14 01:28:25 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/14 01:49:10 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -42,7 +42,7 @@ Image::Image(const uint16_t * buffer)
 
 Image::Image(const char * filename)
 {
-
+	this->_image =  IMG_Load(filename);
 }
 
 int				Image::width(void)
