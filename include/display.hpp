@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/08 11:32:38 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/14 00:26:37 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <SDL.h>
 # include "vector.hpp"
 # include "color.hpp"
+# include "image.hpp"
 
 # define	WIN_CENTER SDL_WINDOWPOS_CENTERED
 # define	P(x)		(x * 10)
@@ -74,6 +75,8 @@ class	Window
 		/*
 		**	Fonctions for draw
 		*/
+		void			drawImage(int x, int y, Image img);
+		void			drawImage(int x, int y, Image img, int w, int h);
 		int				drawPixel(int x, int y, int color = 0xffffff);
 		int				drawPixel(int x, int y, Color c);
 		int				drawLine(int x0, int y0, int x1, int y1);

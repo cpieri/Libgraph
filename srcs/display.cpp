@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2019/01/08 11:31:33 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/14 00:27:25 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,32 @@ SDL_Renderer*	Window::get_render(void)
 /*******************************************************************************
 **							Fonctions for draw								  **
 *******************************************************************************/
+
+void			Window::drawImage(int x, int y, Image img)
+{
+	SDL_Texture *	texture;
+	SDL_Rect		pos;
+
+	pos.x = P(x);
+	pos.y = P(y);
+	texture = img.get_texture(this->_rend);
+	SDL_RenderCopy(this->_rend, texture, NULL, &pos);
+	SDL_DestroyTexture(texture);
+}
+
+void			Window::drawImage(int x, int y, Image img, int w, int h)
+{
+	SDL_Texture *	texture;
+	SDL_Rect		pos;
+
+	pos.x = P(x);
+	pos.y = P(y);
+	pos.w = w;
+	pos.h = h;
+	texture = img.get_texture(this->_rend);
+	SDL_RenderCopy(this->_rend, texture, NULL, &pos);
+	SDL_DestroyTexture(texture);
+}
 
 int				Window::drawPixel(int x, int y, int color)
 {
