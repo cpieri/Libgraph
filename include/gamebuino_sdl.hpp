@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/02 22:56:43 by delay             #+#    #+#             */
-/*   Updated: 2019/01/09 14:19:11 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/16 12:11:48 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@
 class	GamebuinoSdl
 {
 	private:
+		double	time_per_frame;
+		bool	frame_end_flag;
 
 	public:
 		Window	display;

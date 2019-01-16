@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:38 by delay             #+#    #+#             */
-/*   Updated: 2019/01/14 03:21:21 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/01/15 21:47:58 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class	Buttons
 		SDL_Event	_event;
 
 	public:
+		void	wait(void);
 		size_t	get_type(void) const;
 		bool	update(void) ;
 		bool	pressed(Button button) ;
