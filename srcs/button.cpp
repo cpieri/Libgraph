@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/08 11:47:23 by delay             #+#    #+#             */
-/*   Updated: 2019/01/15 21:57:26 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/21 17:45:13 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ size_t	Buttons::get_type(void) const
 
 bool	Buttons::update(void) 
 {
-	SDL_WaitEvent(&this->_event);
+	//SDL_WaitEvent(&this->_event);
+	SDL_PollEvent(&this->_event);
 	if (this->_event.type == SDL_KEYDOWN)
 		return (false);
 	return (true);
@@ -66,7 +67,6 @@ bool	Buttons::repeat(Button button, int period)
 		if (this->_event.key.state == SDL_PRESSED && this->_event.key.repeat <= 1)
 		{
 			key = this->_event.key.keysym.sym;
-			std::cout << "key: " << key << " button: " << button << std::endl;
 			if (key == button)
 				return (true);
 		}
