@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/31 16:53:12 by delay             #+#    #+#             */
-/*   Updated: 2019/01/21 12:20:39 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/21 17:54:55 by delay            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@
 # include "button.hpp"
 # include "gui_button.hpp"
 # include "gamebuino_sdl.hpp"
-# include "millis.hpp"
 
 #endif

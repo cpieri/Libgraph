@@ -6,7 +6,7 @@
 #    By: cpieri <cpieri@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/01 15:43:04 by cpieri            #+#    #+#              #
-#    Updated: 2019/01/21 12:27:23 by delay            ###   ########.fr        #
+#    Updated: 2019/01/21 17:54:32 by delay            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ SDLFLAG	=	-I$(SDL_PATH)/Headers -I$(IMG_PATH)/Headers -I$(TTF_PATH)/Headers
 
 DEPS =		Makefile			\
 			include/display.hpp	\
-			include/millis.hpp	\
 			include/gb_image.hpp	\
 			include/graphics.hpp\
 			include/utils.hpp	\
@@ -46,7 +45,6 @@ DEPS =		Makefile			\
 			include/gamebuino_sdl.hpp
 
 SRCS = 		color.cpp			\
-			millis.cpp			\
 			utils.cpp			\
 			display.cpp			\
 			image.cpp			\
