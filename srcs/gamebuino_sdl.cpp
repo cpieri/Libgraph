@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/05 19:06:50 by delay             #+#    #+#             */
-/*   Updated: 2019/01/21 17:40:18 by delay            ###   ########.fr       */
+/*   Updated: 2019/01/22 15:08:29 by cpieri      ###    #+. /#+    ###.fr     */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ bool	GamebuinoSdl::update(void)
 	{
 		this->frameCount++;
 		this->_time = SDL_GetTicks() + TIMEPERFRAME;
-		std::cout << this->frameCount << std::endl;
 		buttons.update();
 		this->frameEndFlag = false;
 		return (true);
