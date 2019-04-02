@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:11:02 by delay             #+#    #+#             */
-/*   Updated: 2019/01/14 04:29:53 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/02 17:19:56 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 # define __DISPLAY_HPP__
 
 # include <SDL.h>
+# include <SDL_ttf.h>
 # include "vector.hpp"
 # include "color.hpp"
 # include "gb_image.hpp"
 
+# define	FONT		"/System/Library/Fonts/SFNSText.ttf"
 # define	WIN_CENTER SDL_WINDOWPOS_CENTERED
 # define	P(x)		(x * 10)
 # define	WHITE		0xFFFFFF
@@ -47,6 +49,7 @@ class	Window
 		int				_loop;
 		int				_cursor_x;
 		int				_cursor_y;
+		int				_font_size;
 		Color			_color;
 
 	public:
@@ -95,8 +98,19 @@ class	Window
 		void			setColor(Color c);
 		void			setColor(int color);
 		void			setColor(int r, int g, int b);
-		void			setCursor(int x, int y);
 	
+
+		/*
+		**	Fonctions for Text
+		*/
+		void			setCursor(int x, int y);
+		void			setCursorX(int x);
+		void			setCursorY(int y);
+		void			setFontSize(int size);
+		uint16_t		getCursorX(void) const;
+		uint16_t		getCursorY(void) const;
+		size_t			print(const char *s);
+		void			drawChar(int x, int y, char c, int size);
 
 		/*
 		**	Fonctions for Events

@@ -6,7 +6,7 @@
 /*   By: delay <cpieri@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/12 15:44:57 by delay             #+#    #+#             */
-/*   Updated: 2019/01/14 03:15:38 by cpieri      ###    #+. /#+    ###.fr     */
+/*   Updated: 2019/04/02 17:23:20 by cpieri           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 #include <iostream>
 #include <stdlib.h>
 
-Window::Window(void) : _loop(1), _cursor_x(0), _cursor_y(0)
+Window::Window(void) : _loop(1), _cursor_x(0), _cursor_y(0), _font_size(5)
 {
+	TTF_Init();
 }
 
 Window::~Window(void)
 {
 	SDL_DestroyRenderer(this->_rend);
 	SDL_DestroyWindow(this->_win);
+	TTF_Quit();
 }
 
 /*******************************************************************************
-**							Fonctions for Windows							  **
-*******************************************************************************/
+ **							Fonctions for Windows							  **
+ *******************************************************************************/
 
 void			Window::create(char const * title, int w, int h)
 {
@@ -71,8 +73,8 @@ SDL_Window*		Window::get(void)
 }
 
 /*******************************************************************************
-**							Fonctions for Renders							  **
-*******************************************************************************/
+ **							Fonctions for Renders							  **
+ *******************************************************************************/
 
 void			Window::fill(int color)
 {
@@ -122,8 +124,8 @@ SDL_Renderer*	Window::get_render(void)
 }
 
 /*******************************************************************************
-**							Fonctions for draw								  **
-*******************************************************************************/
+ **							Fonctions for draw								  **
+ *******************************************************************************/
 
 void			Window::drawImage(int x, int y, Image img)
 {
@@ -370,15 +372,84 @@ void			Window::setColor(int r, int g, int b)
 			this->_color.get_green(), this->_color.get_blue(), 1);
 }
 
+/******************************************************************************/
+/*							Fonctions for Text								  */
+/******************************************************************************/
+
 void			Window::setCursor(int x, int y)
 {
 	this->_cursor_x = x;
 	this->_cursor_y = y;
 }
 
+void			Window::setCursorX(int x)
+{
+	this->_cursor_x = x;
+}
+
+void			Window::setCursorY(int y)
+{
+	this->_cursor_y = y;
+}
+
+void			Window::setFontSize(int size)
+{
+	this->_font_size = size;
+}
+
+uint16_t		Window::getCursorX(void) const
+{
+	return (this->_cursor_x);
+}
+
+uint16_t		Window::getCursorY(void) const
+{
+	return (this->_cursor_y);
+}
+
+size_t			Window::print(const char *s)
+{
+	TTF_Font		*font;
+	SDL_Rect		pos;
+	SDL_Surface		*text;
+	SDL_Texture		*texture;
+	SDL_Color		c;
+
+	c.r = this->_color.get_red();
+	c.g = this->_color.get_green();
+	c.b = this->_color.get_blue();
+	c.a = 255;
+	if ((font = TTF_OpenFont(FONT, P(this->_font_size))) == NULL)
+		return (-1);
+	if ((text = TTF_RenderText_Blended(font, s, c)) == NULL)
+		return (-1);
+	if ((texture = SDL_CreateTextureFromSurface(this->_rend, text)) == NULL)
+		return (-1);
+	SDL_QueryTexture(texture, NULL, NULL, &pos.w, &pos.h);
+	pos.x = P(this->_cursor_x);
+	pos.y = P(this->_cursor_y);
+	SDL_RenderCopy(this->_rend, texture, NULL, &pos);
+	TTF_CloseFont(font);
+	SDL_FreeSurface(text);
+	SDL_DestroyTexture(texture);
+	return (1);
+}
+
+void			Window::drawChar(int x, int y, char c, int size)
+{
+	char	s[2];
+
+	s[0] = c;
+	s[1] = '\0';
+	this->_cursor_x = x;
+	this->_cursor_y = y;
+	this->_font_size = size;
+	this->print(s);
+}
+
 /*******************************************************************************
-**							Fonctions for Events							  **
-*******************************************************************************/
+ **							Fonctions for Events							  **
+ *******************************************************************************/
 
 int				Window::set_loop(int loop)
 {
